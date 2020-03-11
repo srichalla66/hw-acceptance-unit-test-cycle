@@ -4,6 +4,8 @@ class Movie < ActiveRecord::Base
   end
   
   def self.same_director director
-    Movie.where(director: director)
+    if director.present?
+      Movie.where(director: director)
+    end
   end
 end
